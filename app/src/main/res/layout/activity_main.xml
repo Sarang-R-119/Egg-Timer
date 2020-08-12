@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="0.30"
+        app:layout_constraintHorizontal_weight="1"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/eggLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="22dp" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_weight="0.10"
+        app:layout_constraintVertical_weight="0.50"
+        android:id="@+id/space1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/eggLayout"
+
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintBottom_toTopOf="@id/space3"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/eggLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_weight="0.50"
+        android:background="@drawable/egg"
+
+
+        app:layout_constraintEnd_toEndOf="@+id/space2"
+        app:layout_constraintStart_toEndOf="@id/space1"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintBottom_toTopOf="@id/space3"
+        app:layout_constraintVertical_weight="1">
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="20:00"
+            android:textSize="50sp"
+
+            android:layout_marginTop="100dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/enableBtn"
+
+            app:layout_constraintVertical_bias="1" />
+
+        <Button
+            android:id="@+id/enableBtn"
+            android:onClick="buttonPress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginVertical="25dp"
+
+            android:text="Start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/display" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/space2"
+        app:layout_constraintHorizontal_weight="0.10"
+        app:layout_constraintVertical_weight="0.50"
+
+        app:layout_constraintStart_toEndOf="@id/eggLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintBottom_toTopOf="@id/space3"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/space3"
+
+        app:layout_constraintTop_toBottomOf="@id/eggLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintVertical_weight="0.20"
+        app:layout_constraintHorizontal_weight="1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
