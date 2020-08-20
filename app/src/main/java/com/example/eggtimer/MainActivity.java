@@ -117,16 +117,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // When the button is pressed, actions on the timer are performed appropriately.
     public void buttonPress(View view){
 
         button = (Button) findViewById(R.id.enableBtn);
 
+        // If the timer is not activated, it is then activated.
         if(!timerActivated){
 
             setTimer();
             status_Start();
 
-        }else{
+        }// Else, the timer is stopped.
+        else{
 
             timer.cancel();
             status_Stop();
@@ -134,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // When the timer starts, the properties of the button and the seekbar are changed to reflect the same.
     public void status_Start(){
 
         timerActivated = true;
@@ -143,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // When the timer stops, the properties of the button and the seekbar are changed to reflect the same.
     public void status_Stop(){
 
         timerActivated = false;
@@ -158,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         seekBar.setProgress(startTime);
     }
 
+    // Displays the time on the screen, within the Egg layout.
     public void display(){
 
         String secondsString = String.format("%02d", seconds);
